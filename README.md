@@ -154,5 +154,6 @@ Private / all rights reserved unless you add a license file.
 
 ## Credits
 
+- **Made by [Kashan](https://itzkashan.dev/)**
 - UI and game logic: **Pulse Grid** / aim-trainer project.
 - Bootstrapped with [create-next-app](https://nextjs.org/docs/app/api-reference/cli/create-next-app).

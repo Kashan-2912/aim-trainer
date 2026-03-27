@@ -1017,6 +1017,18 @@ export default function AimTrainer() {
         </div>
       </div>
 
+      <p className="relative z-10 shrink-0 py-1 text-center text-[10px] text-white/45 sm:text-[11px]">
+        Made by{" "}
+        <a
+          href="https://itzkashan.dev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white/75 underline decoration-white/25 underline-offset-2 transition hover:text-white hover:decoration-white/50"
+        >
+          Kashan
+        </a>
+      </p>
+
       <span className="sr-only" aria-hidden>
         {tick}
       </span>
