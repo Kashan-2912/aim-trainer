@@ -46,6 +46,9 @@ type Target = {
 
 type SessionEvt = { t: number; type: "hit" | "miss"; q?: number };
 
+const HEADER_TAGLINE =
+  "Sharpen your reflexes and precision with sleek, lightning-fast aim trainer built for pure performance.";
+
 function targetBorderClass(theme: ColorTheme, highContrast: boolean) {
   const t =
     theme === "cyan"
@@ -596,16 +599,11 @@ export default function AimTrainer() {
       />
 
       <header className="relative z-10 flex w-full max-w-4xl shrink-0 flex-col gap-1 self-center px-1">
-        <div className="flex flex-wrap items-start justify-between gap-3">
-          <div>
-            <h1 className="font-(family-name:--font-display) text-xl font-semibold uppercase tracking-[0.3em] text-white/95 sm:text-2xl">
-              Pulse Grid
-            </h1>
-            <p className="mt-0.5 max-w-xl text-[10px] uppercase tracking-[0.18em] text-white/50">
-              Modes · pause Space · summary · audio
-            </p>
-          </div>
-          <div className="flex flex-col items-end gap-2 sm:flex-row sm:items-center">
+        <div className="flex min-w-0 flex-nowrap items-start justify-between gap-3">
+          <h1 className="shrink-0 font-(family-name:--font-display) text-xl font-semibold uppercase tracking-[0.3em] text-white/95 sm:text-2xl">
+            Pulse Grid
+          </h1>
+          <div className="flex shrink-0 flex-col items-end gap-2 sm:flex-row sm:items-center">
             {phase === "playing" && (
               <button
                 type="button"
@@ -637,6 +635,12 @@ export default function AimTrainer() {
             )}
           </div>
         </div>
+        <p className="max-w-none text-[11px] font-normal leading-snug text-white/65 sm:text-[12px] sm:leading-relaxed">
+          {HEADER_TAGLINE}
+        </p>
+        <p className="max-w-xl text-[10px] uppercase tracking-[0.18em] text-white/45">
+          Modes · pause Space · summary · audio
+        </p>
 
         {phase === "idle" && (
           <div className="mt-2 flex flex-wrap items-end gap-2.5 rounded-lg border border-white/10 bg-black/15 p-2.5 text-xs uppercase tracking-widest sm:text-[13px]">
@@ -787,7 +791,7 @@ export default function AimTrainer() {
       >
         <div
           ref={areaRef}
-          className={`relative mx-auto aspect-square w-[min(100%,min(80vw,calc(min(100svh,100dvh)-15.5rem),480px))] max-w-full shrink-0 touch-none rounded-sm ${phase === "playing" ? "cursor-none" : ""} ${highContrast ? "ring-2 ring-white/30" : ""}`}
+          className={`relative mx-auto aspect-square w-[min(100%,min(76vw,calc(min(100svh,100dvh)-20rem),440px))] max-w-full shrink-0 touch-none rounded-sm ${phase === "playing" ? "cursor-none" : ""} ${highContrast ? "ring-2 ring-white/30" : ""}`}
           onMouseMove={(e) => {
             if (TRAIL_MAX_POINTS <= 0) {
               const r = areaRef.current?.getBoundingClientRect();
