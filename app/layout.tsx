@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Rajdhani } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -30,6 +31,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-0 h-dvh flex-col overflow-hidden overscroll-none bg-[#0a0b0d] text-white select-none">
         {children}
+        <Analytics />
       </body>
     </html>
   );
